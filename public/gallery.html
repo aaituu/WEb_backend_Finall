@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee PO - Gallery</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- jQuery CDN  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container-fluid px-lg-4 px-3">
+        <a class="navbar-brand fw-bold text-warning" href="index.html"
+          >Coffee PO</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item me-3 my-1">
+              <button
+                id="colorChangeBtn"
+                class="btn btn-sm btn-outline-warning ms-lg-3 mt-2 mt-lg-0"
+                aria-label="Toggle dark mode"
+              >
+                <i class="bi bi-moon-stars me-2"></i>Dark Mode
+              </button>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="gallery.html"
+                >Photos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-5 py-5">
+      <h1 class="text-center mb-5 fw-bold text-dark responsive-title">
+        Our Coffee Shop Gallery
+      </h1>
+
+      <!-- Bootstrap Cards in Grid -->
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="img/1.jpeg" class="card-img-top" alt="Cozy Atmosphere" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Cozy Atmosphere</h5>
+              <p class="card-text text-muted">
+                Perfect for reading and relaxing in a comfortable environment.
+              </p>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cozyAtmosphereModal"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="img/2.jpg" class="card-img-top" alt="Freshly Brewed" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Freshly Brewed</h5>
+              <p class="card-text text-muted">
+                Coffee made with passion and expertise every single time.
+              </p>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#freshlyBrewedModal"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="img/3.jpg" class="card-img-top" alt="Specialty Drinks" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Specialty Drinks</h5>
+              <p class="card-text text-muted">
+                Unique flavors crafted for every taste and preference.
+              </p>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#specialtyDrinksModal"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100 shadow-sm border-0">
+            <img
+              src="img/4.jpg"
+              class="card-img-top"
+              alt="Delicious Desserts"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Delicious Desserts</h5>
+              <p class="card-text text-muted">
+                Sweet treats to complement your favorite drink perfectly.
+              </p>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#deliciousDessertsModal"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100 shadow-sm border-0">
+            <img
+              src="img/5.jpg"
+              class="card-img-top"
+              alt="Perfect for Friends"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Perfect for Friends</h5>
+              <p class="card-text text-muted">
+                Great place for conversations and quality time together.
+              </p>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#perfectForFriendsModal"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="img/6.png" class="card-img-top" alt="Relaxing Vibe" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Relaxing Vibe</h5>
+              <p class="card-text text-muted">
+                Your second home away from home with warm ambiance.
+              </p>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#relaxingVibeModal"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="img/1.jpeg" class="card-img-top" alt="Modern Interior" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Modern Interior</h5>
+              <p class="card-text text-muted">
+                Stylish and comfortable design for your enjoyment.
+              </p>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#modernInteriorModal"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="img/2.jpg" class="card-img-top" alt="Expert Baristas" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Expert Baristas</h5>
+              <p class="card-text text-muted">
+                Crafting the perfect cup with skill and dedication.
+              </p>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#expertBaristasModal"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 1: Cozy Atmosphere -->
+        <div
+          class="modal fade"
+          id="cozyAtmosphereModal"
+          tabindex="-1"
+          aria-labelledby="cozyAtmosphereModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold" id="cozyAtmosphereModalLabel">
+                  Cozy Atmosphere
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="img/1.jpeg"
+                  class="card-img-top rounded mb-3"
+                  alt="Cozy Atmosphere"
+                />
+                <h6 class="fw-bold mb-2">Coffee Shop Gallery</h6>
+                <p class="text-muted">
+                  Step into our warm and inviting space where comfort meets
+                  style. Our cozy atmosphere is designed to be your perfect
+                  retreat from the busy world outside. Soft lighting, plush
+                  seating, and carefully curated decor create an environment
+                  that feels like home.
+                </p>
+                <p class="text-muted">
+                  Whether you're curling up with a good book, working on your
+                  laptop, or simply enjoying a moment of peace, our space
+                  welcomes you. Every corner is thoughtfully designed to provide
+                  the perfect balance of comfort and functionality, making it
+                  ideal for both relaxation and productivity.
+                </p>
+              </div>
+              <div class="modal-footer border-0">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 2: Freshly Brewed -->
+        <div
+          class="modal fade"
+          id="freshlyBrewedModal"
+          tabindex="-1"
+          aria-labelledby="freshlyBrewedModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold" id="freshlyBrewedModalLabel">
+                  Freshly Brewed
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="img/2.jpg"
+                  class="card-img-top rounded mb-3"
+                  alt="Freshly Brewed"
+                />
+                <h6 class="fw-bold mb-2">Coffee Shop Gallery</h6>
+                <p class="text-muted">
+                  Experience the difference of freshly brewed coffee made with
+                  precision and care. We source only the finest beans from
+                  sustainable farms around the world, ensuring every cup
+                  delivers exceptional flavor and aroma. Our brewing process is
+                  an art form, perfected over years of dedication.
+                </p>
+                <p class="text-muted">
+                  From the moment the beans are ground to the final pour, every
+                  step is executed with expertise and passion. We believe in the
+                  perfect extraction, the ideal temperature, and the right
+                  timing to bring out the unique characteristics of each coffee
+                  origin. Taste the difference that true craftsmanship makes.
+                </p>
+              </div>
+              <div class="modal-footer border-0">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 3: Specialty Drinks -->
+        <div
+          class="modal fade"
+          id="specialtyDrinksModal"
+          tabindex="-1"
+          aria-labelledby="specialtyDrinksModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold" id="specialtyDrinksModalLabel">
+                  Specialty Drinks
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="img/3.jpg"
+                  class="card-img-top rounded mb-3"
+                  alt="Specialty Drinks"
+                />
+                <h6 class="fw-bold mb-2">Coffee Shop Gallery</h6>
+                <p class="text-muted">
+                  Discover our carefully crafted specialty drinks that push the
+                  boundaries of traditional coffee. Each creation is a unique
+                  blend of premium ingredients, innovative techniques, and
+                  creative inspiration. From seasonal favorites to signature
+                  house specials, our menu offers something extraordinary for
+                  every palate.
+                </p>
+                <p class="text-muted">
+                  Our mixologists experiment with unique flavor combinations,
+                  using house-made syrups, exotic spices, and premium add-ins to
+                  create drinks that are as beautiful as they are delicious.
+                  Whether you prefer bold and adventurous or smooth and subtle,
+                  our specialty drinks are designed to surprise and delight with
+                  every sip.
+                </p>
+              </div>
+              <div class="modal-footer border-0">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 4: Delicious Desserts -->
+        <div
+          class="modal fade"
+          id="deliciousDessertsModal"
+          tabindex="-1"
+          aria-labelledby="deliciousDessertsModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5
+                  class="modal-title fw-bold"
+                  id="deliciousDessertsModalLabel"
+                >
+                  Delicious Desserts
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="img/4.jpg"
+                  class="card-img-top rounded mb-3"
+                  alt="Delicious Desserts"
+                />
+                <h6 class="fw-bold mb-2">Coffee Shop Gallery</h6>
+                <p class="text-muted">
+                  Indulge in our selection of handcrafted desserts that
+                  perfectly complement your favorite coffee. From flaky
+                  croissants and buttery pastries to decadent cakes and
+                  artisanal cookies, each treat is baked fresh daily using
+                  premium ingredients and traditional techniques.
+                </p>
+                <p class="text-muted">
+                  Our pastry chefs pour their heart into every creation,
+                  balancing flavors and textures to deliver moments of pure joy.
+                  Whether you're looking for a light accompaniment to your
+                  morning coffee or a rich dessert to end your day, our sweet
+                  treats are the perfect pairing for any beverage on our menu.
+                </p>
+              </div>
+              <div class="modal-footer border-0">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 5: Perfect for Friends -->
+        <div
+          class="modal fade"
+          id="perfectForFriendsModal"
+          tabindex="-1"
+          aria-labelledby="perfectForFriendsModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5
+                  class="modal-title fw-bold"
+                  id="perfectForFriendsModalLabel"
+                >
+                  Perfect for Friends
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="img/5.jpg"
+                  class="card-img-top rounded mb-3"
+                  alt="Perfect for Friends"
+                />
+                <h6 class="fw-bold mb-2">Coffee Shop Gallery</h6>
+                <p class="text-muted">
+                  Our coffee shop is more than just a place to grab a drink—it's
+                  a gathering space where friendships flourish and memories are
+                  made. With comfortable seating arrangements and a welcoming
+                  atmosphere, it's the ideal spot for catching up with old
+                  friends or making new ones.
+                </p>
+                <p class="text-muted">
+                  Whether you're planning a casual meetup, a study session, or a
+                  celebration, our space accommodates groups of all sizes. The
+                  ambient music and friendly vibe create the perfect backdrop
+                  for meaningful conversations and shared laughter. Come
+                  together, connect, and enjoy quality time in a space designed
+                  for community.
+                </p>
+              </div>
+              <div class="modal-footer border-0">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 6: Relaxing Vibe -->
+        <div
+          class="modal fade"
+          id="relaxingVibeModal"
+          tabindex="-1"
+          aria-labelledby="relaxingVibeModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold" id="relaxingVibeModalLabel">
+                  Relaxing Vibe
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="img/6.png"
+                  class="card-img-top rounded mb-3"
+                  alt="Relaxing Vibe"
+                />
+                <h6 class="fw-bold mb-2">Coffee Shop Gallery</h6>
+                <p class="text-muted">
+                  Feel the stress melt away as you enter our sanctuary of calm.
+                  Our relaxing atmosphere is carefully curated with soothing
+                  music, gentle lighting, and a peaceful ambiance that invites
+                  you to slow down and savor the moment. This is your escape,
+                  your second home where you can truly unwind.
+                </p>
+                <p class="text-muted">
+                  We've created a space that feels familiar yet special, where
+                  every visit feels like coming home. From the warm colors to
+                  the comfortable furnishings, every detail is designed to help
+                  you disconnect from the outside world and reconnect with
+                  yourself. Experience the tranquility that keeps our customers
+                  coming back day after day.
+                </p>
+              </div>
+              <div class="modal-footer border-0">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 7: Modern Interior -->
+        <div
+          class="modal fade"
+          id="modernInteriorModal"
+          tabindex="-1"
+          aria-labelledby="modernInteriorModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold" id="modernInteriorModalLabel">
+                  Modern Interior
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="img/1.jpeg"
+                  class="card-img-top rounded mb-3"
+                  alt="Modern Interior"
+                />
+                <h6 class="fw-bold mb-2">Coffee Shop Gallery</h6>
+                <p class="text-muted">
+                  Experience contemporary design at its finest with our modern
+                  interior that seamlessly blends style and comfort. Clean
+                  lines, minimalist aesthetics, and thoughtful spatial planning
+                  create an environment that feels fresh, sophisticated, and
+                  inviting. Our design philosophy celebrates simplicity without
+                  sacrificing warmth.
+                </p>
+                <p class="text-muted">
+                  From sleek furniture to artistic accents, every element is
+                  carefully chosen to enhance your experience. Natural materials
+                  meet modern finishes, creating a space that feels both
+                  cutting-edge and timeless. Whether you're here to work, relax,
+                  or socialize, our modern interior provides the perfect setting
+                  for any occasion.
+                </p>
+              </div>
+              <div class="modal-footer border-0">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 8: Expert Baristas -->
+        <div
+          class="modal fade"
+          id="expertBaristasModal"
+          tabindex="-1"
+          aria-labelledby="expertBaristasModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold" id="expertBaristasModalLabel">
+                  Expert Baristas
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="img/2.jpg"
+                  class="card-img-top rounded mb-3"
+                  alt="Expert Baristas"
+                />
+                <h6 class="fw-bold mb-2">Coffee Shop Gallery</h6>
+                <p class="text-muted">
+                  Behind every perfect cup is a skilled barista who has
+                  dedicated years to mastering their craft. Our team of coffee
+                  experts brings passion, precision, and extensive knowledge to
+                  every drink they create. Each barista has undergone rigorous
+                  training in coffee science, brewing techniques, and customer
+                  service.
+                </p>
+                <p class="text-muted">
+                  They don't just make coffee—they create experiences. From
+                  recommending the perfect blend for your taste preferences to
+                  executing complex brewing methods with flawless technique, our
+                  baristas are true artisans. Their commitment to excellence and
+                  genuine love for coffee shines through in every interaction
+                  and every cup they serve.
+                </p>
+              </div>
+              <div class="modal-footer border-0">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="img/3.jpg" class="card-img-top" alt="Latte Art" />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Latte Art</h5>
+              <p class="card-text text-muted">
+                Beautiful designs in every cup we serve to you.
+              </p>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#latteArtModal"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="latteArtModal"
+          tabindex="-1"
+          aria-labelledby="latteArtModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold" id="latteArtModalLabel">
+                  Latte Art
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="img/3.jpg"
+                  class="card-img-top rounded mb-3"
+                  alt="Latte Art"
+                />
+                <h6 class="fw-bold mb-2">Coffee Shop Gallery</h6>
+                <p class="text-muted">
+                  Our skilled baristas create stunning latte art designs that
+                  transform your coffee experience into a visual masterpiece.
+                  Each cup is carefully crafted with precision and passion,
+                  featuring intricate patterns from classic hearts and rosettas
+                  to elaborate tulips and swans.
+                </p>
+                <p class="text-muted">
+                  We believe that coffee is not just a beverage—it's an art
+                  form. Watch as our expert baristas pour steamed milk with
+                  perfect technique, creating beautiful designs that are almost
+                  too pretty to drink. Every cup tells a story of craftsmanship
+                  and dedication to the perfect coffee experience.
+                </p>
+              </div>
+              <div class="modal-footer border-0">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center mt-5 pt-4">
+        <h3 class="mb-4 responsive-heading">Visit Us Today!</h3>
+        <div class="btn-group" role="group">
+          <a href="menu.html" class="btn btn-primary btn-lg">View Menu</a>
+          <a href="contact.html" class="btn btn-outline-primary btn-lg"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <h3 class="h5 mb-4 text-warning">Contact Information</h3>
+            <div class="mb-3">
+              <p class="mb-1 text-light">Cofee po CEO</p>
+              <a
+                href="tel:+77777777777"
+                class="text-white text-decoration-none fs-5"
+                >+7 777 777-77-77</a
+              >
+            </div>
+            <div class="mb-3">
+              <p class="mb-1 text-light">administration</p>
+              <a
+                href="tel:+77777777777"
+                class="text-white text-decoration-none fs-5"
+                >+7 777 777-77-77</a
+              >
+            </div>
+
+            <div class="mt-4">
+              <a
+                href="#"
+                class="btn btn-outline-light btn-sm me-2"
+                aria-label="Facebook"
+                target="_blank"
+                >Facebook</a
+              >
+              <a
+                href="https://www.instagram.com/"
+                class="btn btn-outline-light btn-sm"
+                aria-label="Instagram"
+                target="_blank"
+                >Instagram</a
+              >
+            </div>
+          </div>
+          <div
+            class="col-lg-6 col-md-6 col-sm-12 text-lg-end text-md-end text-sm-start"
+          >
+            <p class="mb-1">&copy; 2025 PO Coffee</p>
+            <p class="mb-1">Astana IT University</p>
+            <p class="mb-0">SE-2436</p>
+            <div class="my-5" id="dateTimeDisplay"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="api.js"></script>
+    <script src="auth.js"></script>
+    <script src="cart.js"></script>
+    <script src="script.js" defer></script>
+    <!-- jQuery Features Script -->
+    <script src="jquery-features.js"></script>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+:root{
+  --admin-bg:#f6f7fb;
+  --admin-card:#ffffff;
+  --admin-border:#e8ecf3;
+  --admin-muted:#6c757d;
+}
+
+body.admin-body{
+  background: var(--admin-bg);
+}
+
+.admin-shell{
+  padding-top: 36px;
+  padding-bottom: 48px;
+}
+
+.admin-title{
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+}
+
+.admin-tabs{
+  background: var(--admin-card);
+  border: 1px solid var(--admin-border);
+  border-radius: 14px;
+  padding: 10px 14px;
+}
+
+.admin-tabs .nav-link{
+  border-radius: 10px !important;
+  padding: 10px 14px;
+  color: #1f2a37;
+}
+
+.admin-tabs .nav-link.active{
+  background: transparent;
+  color: #b4232a;
+  position: relative;
+}
+
+.admin-tabs .nav-link.active::after{
+  content:"";
+  position:absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 2px;
+  height: 2px;
+  background: #b4232a;
+  border-radius: 2px;
+}
+
+.admin-card{
+  background: var(--admin-card);
+  border: 1px solid var(--admin-border);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(16,24,40,.06);
+}
+
+.metric-card{
+  padding: 18px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height: 96px;
+}
+
+.metric-label{
+  color: var(--admin-muted);
+  font-size: 14px;
+}
+
+.metric-value{
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-top: 6px;
+}
+
+.metric-icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border: 1px solid var(--admin-border);
+  background: #fff;
+}
+
+.badge-status{
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--admin-border);
+}
+
+.badge-created{ background:#fff7ed; color:#9a3412; }
+.badge-processing{ background:#eff6ff; color:#1d4ed8; }
+.badge-completed{ background:#ecfdf3; color:#027a48; }
+.badge-cancelled{ background:#fef2f2; color:#b42318; }
+
+.table thead th{
+  color:#6b7280;
+  font-weight:600;
+  font-size: 13px;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.table tbody td{
+  border-bottom: 1px solid #f0f3f8;
+}
+
+.admin-filter-row .form-select, .admin-filter-row .form-control{
+  border-radius: 12px;
+}
+
+.chart-wrap{
+  padding: 18px;
+}
+
+.chart-title{
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.week-bars{
+  display:flex;
+  gap: 14px;
+  align-items:flex-end;
+  height: 240px;
+  padding: 12px 8px 4px;
+}
+
+.week-bar{
+  flex: 1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  gap: 8px;
+}
+
+.week-bar .bar{
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  background: #b56b73;
+  min-height: 8px;
+}
+
+.week-bar .label{
+  color: #6b7280;
+  font-size: 12px;
+}
+
+body.admin-body nav.navbar{display:none;}
