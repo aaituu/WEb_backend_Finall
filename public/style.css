@@ -1,0 +1,2248 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  background-color: #fefffb;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+
+  /* ============================
+    Card Group Responsive
+    Using CSS Media Queries ONLY
+    ============================ */
+
+  .card-responsive-group {
+      display: flex;
+      flex-wrap: wrap;
+  }
+
+  /* Mobile: Stack vertically (< 768px) */
+  @media (max-width: 767px) {
+      .card-responsive-group > div {
+          flex: 0 0 100%;
+          max-width: 100%;
+      }
+  }
+
+  /* Tablet: Two cards per row (768px - 991px) */
+  @media (min-width: 768px) and (max-width: 991px) {
+      .card-responsive-group > div {
+          flex: 0 0 50%;
+          max-width: 50%;
+      }
+  }
+
+  /* Desktop: Three cards per row (≥ 992px) */
+  @media (min-width: 992px) {
+      .card-responsive-group > div {
+          flex: 0 0 33.333%;
+          max-width: 33.333%;
+      }
+  }
+
+  .accordion-content-custom {
+      max-height: 0; 
+      overflow: hidden;
+      transition: max-height 0.35s ease-out; 
+      padding: 0 1rem; 
+  }
+
+  .accordion-item-custom.active .accordion-content-custom {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+  }
+
+  .accordion-header-custom {
+      cursor: pointer; 
+      user-select: none;
+      transition: background-color 0.2s; 
+  }
+
+  .accordion-header-custom:hover {
+      background-color: #f0f0f0 !important; 
+  }
+
+/* ============================
+   BOOTSTRAP NAVBAR CUSTOMIZATION
+   ============================ */
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.1);
+    transform: translateY(-2px);
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.2);
+}
+
+/* ============================
+   CAROUSEL CUSTOMIZATION 
+   ============================ */
+
+.carousel-img {
+    height: 600px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-img {
+        height: 300px;
+    }
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* ============================
+   ORIGINAL PROMO GRID STYLES
+   ============================ */
+
+.promo-grid {
+  display: flex;
+  gap: 0;
+  height: 400px;
+}
+
+.promo-item {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.promo-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.promo-item:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.promo-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+  z-index: 0;
+}
+
+.promo-item:hover::before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.promo-link {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+
+.promo-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative; 
+  z-index: 3;
+}
+
+.promo-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .promo-grid {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .promo-item {
+    height: 200px;
+  }
+}
+
+/* ============================
+   BOOTSTRAP CARDS CUSTOMIZATION 
+   ============================ */
+
+.card {
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* ============================
+   BOOTSTRAP BUTTONS CUSTOMIZATION
+   ============================ */
+
+.btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background-color: #b76e79;
+    border-color: #b76e79;
+}
+
+.btn-primary:hover {
+    background-color: #8d525a;
+    border-color: #8d525a;
+}
+
+.btn-outline-primary {
+    color: #b76e79;
+    border-color: #b76e79;
+}
+
+.btn-outline-primary:hover {
+    background-color: #b76e79;
+    border-color: #b76e79;
+    color: white;
+}
+
+/* Button group responsive */
+.responsive-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+@media (max-width: 576px) {
+    .responsive-btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .responsive-btn-group .btn {
+        width: 100%;
+    }
+}
+
+/* ============================
+   FORM STYLING 
+   ============================ */
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #b76e79;
+    box-shadow: 0 0 0 0.2rem rgba(183, 110, 121, 0.25);
+}
+
+/* ============================
+   ACCESSIBILITY 
+   ============================ */
+
+a:focus,
+button:focus,
+.btn:focus,
+.form-control:focus {
+    outline: 2px solid #ffc107;
+    outline-offset: 2px;
+}
+
+/* ============================
+   FOOTER STYLES
+   ============================ */
+
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
+
+/* ============================
+   UTILITY CLASSES
+   ============================ */
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.text-dark {
+    color: #2c1a18 !important;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================
+   GALLERY PAGE STYLES
+   ============================ */
+
+.gallery {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fefffb;
+}
+
+.gallery .title2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #4a2c2a; 
+}
+
+.img-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.imag-bord {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.imag-bord img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; 
+  display: block;
+}
+
+.imag-bord p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.imag-bord:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.imag-bord:hover p {
+  transform: translateY(0);
+}
+
+/* ============================
+   MENU PAGE STYLES 
+   ============================ */
+
+.men-main {
+  background-color: #f8f9fa;
+}
+
+.sec-menu {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.sec-menu .title2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #4a2c2a;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.menu-text {
+  flex: 1;
+}
+
+.menu-text h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #2c1a18;
+}
+
+.menu-text p {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .menu-img {
+    width: 200px;
+    height: 150px;
+  }
+}
+
+/* ============================
+   CONTACT PAGE STYLES 
+   ============================ */
+
+.con-main {
+  background-color: #fefffb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.contact-section {
+  max-width: 600px;
+  width: 100%;
+  margin: 50px 20px;
+  padding: 40px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section .title3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #2c1a18;
+}
+
+/* ============================
+   RESPONSIVE ADJUSTMENTS
+   ============================ */
+
+@media (max-width: 768px) {
+  .img-box {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+}
+
+/* ============================
+   PRINT STYLES
+   ============================ */
+
+@media print {
+  .navbar,
+  .carousel,
+  .btn,
+  footer {
+    display: none;
+  }
+}
+
+
+
+/* ============================
+   Popup Styles
+   ============================ */
+
+
+#popupOverlay {
+    
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1040; 
+}
+
+
+#subscriptionPopup {
+    display: none; 
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    z-index: 1050; 
+    color: #333; 
+}
+#closePopup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+
+#subscriptionPopup .form-control {
+    border-radius: 5px;
+}
+
+/* ============================
+   jQuery Styles
+   ============================ */
+
+/* Search container */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#searchSuggestions {
+  position: absolute;
+  top: 100%;      
+  left: 0;
+  width: 100%;
+  margin-top: 6px; 
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 6px;
+  z-index: 1000;
+  display: none;
+}
+
+
+/* Stats section */
+.stats-section h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* Notification container */
+.alert {
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Lazy loading placeholder */
+.lazy-image {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+}
+
+.lazy-loaded {
+    opacity: 1;
+}
+
+/* Copy button hover effects */
+.copy-phone-btn,
+.copy-address-btn {
+    transition: all 0.3s ease;
+}
+
+.copy-phone-btn:hover,
+.copy-address-btn:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+/* ============================
+   DARK MODE BASE STYLES
+   ============================ */
+
+body.dark-mode {
+    background-color: #0d1117 !important;
+    color: #e6edf3 !important;
+}
+
+/* ============================
+   NAVIGATION BAR - Dark Mode
+   ============================ */
+
+body.dark-mode .navbar-dark {
+    background-color: #010409 !important;
+    border-bottom: 1px solid #21262d;
+}
+
+body.dark-mode .navbar-brand {
+    color: #ffc107 !important;
+}
+
+body.dark-mode .navbar-dark .navbar-nav .nav-link {
+    color: #c9d1d9 !important;
+}
+
+body.dark-mode .navbar-dark .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-dark .navbar-nav .nav-link.active {
+    color: #ffc107 !important;
+    background-color: rgba(255, 193, 7, 0.15) !important;
+}
+
+/* ============================
+   CAROUSEL - Dark Mode
+   ============================ */
+
+body.dark-mode .carousel-caption {
+    background: rgba(13, 17, 23, 0.85) !important;
+    border: 1px solid #21262d;
+}
+
+body.dark-mode .carousel-caption h1,
+body.dark-mode .carousel-caption h2,
+body.dark-mode .carousel-caption p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .carousel-control-prev-icon,
+body.dark-mode .carousel-control-next-icon {
+    filter: invert(1) drop-shadow(0 0 3px rgba(0, 0, 0, 0.8));
+}
+
+body.dark-mode .carousel-indicators button {
+    background-color: rgba(255, 193, 7, 0.6) !important;
+}
+
+body.dark-mode .carousel-indicators button.active {
+    background-color: #ffc107 !important;
+}
+
+/* ============================
+   CARDS - Dark Mode
+   ============================ */
+
+body.dark-mode .card {
+    background-color: #161b22 !important;
+    border-color: #21262d !important;
+    color: #e6edf3 !important;
+}
+
+body.dark-mode .card:hover {
+    background-color: #1c2128 !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode .card-title {
+    color: #ffffff !important;
+}
+
+body.dark-mode .card-text {
+    color: #c9d1d9 !important;
+}
+
+body.dark-mode .card-body {
+    background-color: transparent !important;
+}
+
+/* ============================
+   SECTIONS - Dark Mode
+   ============================ */
+
+body.dark-mode .bg-light {
+    background-color: #0d1117 !important;
+}
+
+body.dark-mode .bg-white {
+    background-color: #161b22 !important;
+}
+
+body.dark-mode .container-fluid.py-5.bg-light {
+    background-color: #0d1117 !important;
+}
+
+/* ============================
+   PROMO GRID - Dark Mode
+   ============================ */
+
+body.dark-mode .promo-item::before {
+    background-color: rgba(13, 17, 23, 0.7) !important;
+}
+
+body.dark-mode .promo-item:hover::before {
+    background-color: rgba(13, 17, 23, 0.4) !important;
+}
+
+body.dark-mode .promo-title,
+body.dark-mode .promo-text {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* ============================
+   TEXT ELEMENTS - Dark Mode
+   ============================ */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode .text-dark,
+body.dark-mode .responsive-title,
+body.dark-mode .responsive-heading,
+body.dark-mode .responsive-subheading {
+    color: #ffffff !important;
+}
+
+body.dark-mode .text-muted,
+body.dark-mode .responsive-text {
+    color: #8b949e !important;
+}
+
+body.dark-mode .text-light {
+    color: #c9d1d9 !important;
+}
+
+/* ============================
+   FORMS - Dark Mode
+   ============================ */
+
+body.dark-mode .form-control,
+body.dark-mode .form-select,
+body.dark-mode textarea {
+    background-color: #0d1117 !important;
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+    background-color: #161b22 !important;
+    border-color: #ffc107 !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25) !important;
+    color: #e6edf3 !important;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #6e7681 !important;
+}
+
+body.dark-mode .input-group-text {
+    background-color: #161b22 !important;
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+}
+
+body.dark-mode .form-label {
+    color: #e6edf3 !important;
+}
+
+body.dark-mode .form-text {
+    color: #8b949e !important;
+}
+
+body.dark-mode .form-check-label {
+    color: #e6edf3 !important;
+}
+
+/* ============================
+   BUTTONS - Dark Mode
+   ============================ */
+
+body.dark-mode .btn-primary {
+    background-color: #8d525a !important;
+    border-color: #8d525a !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #b76e79 !important;
+    border-color: #b76e79 !important;
+}
+
+body.dark-mode .btn-outline-primary {
+    color: #b76e79 !important;
+    border-color: #b76e79 !important;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+    background-color: #b76e79 !important;
+    border-color: #b76e79 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #21262d !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+
+body.dark-mode .btn-outline-secondary {
+    color: #8b949e !important;
+    border-color: #30363d !important;
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+    background-color: #21262d !important;
+    color: #e6edf3 !important;
+}
+
+body.dark-mode .btn-warning {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    color: #000000 !important;
+}
+
+body.dark-mode .btn-outline-warning {
+    color: #040404 !important;
+    border-color: #ffc107 !important;
+}
+
+body.dark-mode .btn-outline-light {
+    color: #c9d1d9 !important;
+    border-color: #30363d !important;
+}
+
+body.dark-mode .btn-outline-light:hover {
+    background-color: #21262d !important;
+    color: #e6edf3 !important;
+}
+
+/* ============================
+   ALERTS & NOTIFICATIONS - Dark Mode
+   ============================ */
+
+body.dark-mode .alert {
+    background-color: #161b22 !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+
+body.dark-mode .alert-success {
+    background-color: #0d3a0d !important;
+    border-color: #1a5a1a !important;
+    color: #7ee87e !important;
+}
+
+body.dark-mode .alert-info {
+    background-color: #0d2636 !important;
+    border-color: #1a4569 !important;
+    color: #7ec8e8 !important;
+}
+
+body.dark-mode .alert-warning {
+    background-color: #3d3000 !important;
+    border-color: #6b5200 !important;
+    color: #f0c341 !important;
+}
+
+body.dark-mode .alert-danger {
+    background-color: #3d0d0d !important;
+    border-color: #6b1a1a !important;
+    color: #e87e7e !important;
+}
+
+/* ============================
+   BADGES - Dark Mode
+   ============================ */
+
+body.dark-mode .badge {
+    background-color: #21262d !important;
+    color: #e6edf3 !important;
+}
+
+body.dark-mode .badge.bg-primary {
+    background-color: #8d525a !important;
+}
+
+body.dark-mode .badge.bg-success {
+    background-color: #1a5a1a !important;
+}
+
+body.dark-mode .badge.bg-warning {
+    background-color: #6b5200 !important;
+    color: #ffffff !important;
+}
+
+/* ============================
+   FOOTER - Dark Mode
+   ============================ */
+
+body.dark-mode footer.bg-dark {
+    background-color: #010409 !important;
+    border-top: 1px solid #21262d;
+}
+
+body.dark-mode footer .text-warning {
+    color: #ffc107 !important;
+}
+
+body.dark-mode footer a {
+    color: #c9d1d9 !important;
+}
+
+body.dark-mode footer a:hover {
+    color: #ffc107 !important;
+}
+
+/* ============================
+   ACCORDION - Dark Mode
+   ============================ */
+
+body.dark-mode .accordion-item-custom {
+    background-color: #161b22 !important;
+    border-color: #21262d !important;
+}
+
+body.dark-mode .accordion-header-custom {
+    background-color: #0d1117 !important;
+}
+
+body.dark-mode .accordion-header-custom:hover {
+    background-color: #161b22 !important;
+}
+
+body.dark-mode .accordion-content-custom {
+    background-color: #161b22 !important;
+    color: #e6edf3 !important;
+}
+
+/* ============================
+   POPUP/MODAL - Dark Mode
+   ============================ */
+
+body.dark-mode #subscriptionPopup {
+    background-color: #161b22 !important;
+    border: 1px solid #21262d !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8) !important;
+}
+
+body.dark-mode #popupOverlay {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+body.dark-mode #closePopup {
+    color: #8b949e !important;
+}
+
+body.dark-mode #closePopup:hover {
+    color: #e6edf3 !important;
+}
+
+/* ============================
+   MENU PAGE - Dark Mode
+   ============================ */
+
+body.dark-mode .menu-item {
+    background-color: #161b22 !important;
+    border: 1px solid #21262d !important;
+}
+
+body.dark-mode .menu-item:hover {
+    background-color: #1c2128 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode .menu-text h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .menu-text p {
+    color: #8b949e !important;
+}
+
+/* ============================
+   JQUERY FEATURES - Dark Mode
+   ============================ */
+
+body.dark-mode .search-container .input-group-text {
+    background-color: #161b22 !important;
+    color: #e6edf3 !important;
+}
+
+body.dark-mode #searchSuggestions {
+    background-color: #161b22 !important;
+    border-color: #30363d !important;
+}
+
+body.dark-mode #searchSuggestions .list-group-item {
+    background-color: #161b22 !important;
+    color: #e6edf3 !important;
+    border-color: #21262d !important;
+}
+
+body.dark-mode #searchSuggestions .list-group-item:hover {
+    background-color: #1c2128 !important;
+    color: #ffc107 !important;
+}
+
+body.dark-mode .stats-section {
+    background-color: #0d1117 !important;
+}
+
+body.dark-mode .rating-stars .star {
+    filter: brightness(0.9);
+}
+
+/* ============================
+   ACCESSIBILITY - Dark Mode
+   ============================ */
+
+body.dark-mode a:focus,
+body.dark-mode button:focus,
+body.dark-mode .btn:focus,
+body.dark-mode .form-control:focus {
+    outline: 2px solid #ffc107 !important;
+    outline-offset: 2px;
+}
+
+/* ============================
+   CONTRAST IMPROVEMENTS
+   ============================ */
+
+body.dark-mode .shadow-sm {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode .shadow-lg {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Ensure proper contrast for all interactive elements */
+body.dark-mode .card-img-top {
+    border-bottom: 1px solid #21262d;
+}
+
+body.dark-mode hr {
+    border-color: #30363d !important;
+    opacity: 1;
+}
+
+/* ============================
+   UTILITY CLASSES - Dark Mode
+   ============================ */
+
+body.dark-mode .text-warning {
+    color: #ffc107 !important;
+}
+
+body.dark-mode .bg-dark {
+    background-color: #010409 !important;
+}
+
+/* Date/Time Display */
+body.dark-mode #dateTimeDisplay {
+    color: #8b949e !important;
+}
+
+body.dark-mode .date-display,
+body.dark-mode .time-display {
+    color: #c9d1d9 !important;
+}
+
+/* ============================
+   ENHANCED RESPONSIVE DESIGN
+   Improved breakpoints and mobile optimization
+   ============================ */
+
+/* ============================
+   RESPONSIVE IMAGES
+   ============================ */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-img-top,
+.img-fluid {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ============================
+   EXTRA SMALL DEVICES (< 375px)
+   Very small phones
+   ============================ */
+
+@media (max-width: 374px) {
+    body {
+        font-size: 13px;
+    }
+    
+    .responsive-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .responsive-heading {
+        font-size: 1.1rem !important;
+    }
+    
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .carousel-img {
+        height: 250px !important;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+/* ============================
+   SMALL MOBILE (375px - 575px)
+   Standard mobile phones
+   ============================ */
+
+@media (min-width: 375px) and (max-width: 575px) {
+    .carousel-img {
+        height: 300px;
+    }
+    
+    .promo-item {
+        height: 220px;
+    }
+    
+    .card-img-top {
+        height: 200px;
+    }
+    
+    /* Stack buttons vertically on small screens */
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-group .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Improve form spacing */
+    .form-control,
+    .form-select {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* ============================
+   MOBILE LANDSCAPE (576px - 767px)
+   ============================ */
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .carousel-img {
+        height: 350px;
+    }
+    
+    .promo-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .promo-item {
+        flex: 0 0 50%;
+        height: 250px;
+    }
+    
+    /* Two-column layout for cards */
+    .row.g-4 > div[class*="col-"] {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* ============================
+   TABLET PORTRAIT (768px - 991px)
+   ============================ */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .carousel-img {
+        height: 450px;
+    }
+    
+    .promo-grid {
+        height: 350px;
+    }
+    
+    .card-img-top {
+        height: 220px;
+    }
+    
+    /* Improve menu layout */
+    .menu-item {
+        flex-direction: row;
+    }
+    
+    .menu-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    /* Footer improvement */
+    footer .col-md-6 {
+        text-align: left !important;
+    }
+}
+
+/* ============================
+   TABLET LANDSCAPE (992px - 1199px)
+   ============================ */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .carousel-img {
+        height: 500px;
+    }
+    
+    .container {
+        max-width: 960px;
+    }
+    
+    .card-img-top {
+        height: 230px;
+    }
+}
+
+/* ============================
+   DESKTOP (1200px - 1399px)
+   ============================ */
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .carousel-img {
+        height: 550px;
+    }
+    
+    .container {
+        max-width: 1140px;
+    }
+    
+    .card-img-top {
+        height: 250px;
+    }
+}
+
+/* ============================
+   LARGE DESKTOP (≥ 1400px)
+   ============================ */
+
+@media (min-width: 1400px) {
+    .carousel-img {
+        height: 600px;
+    }
+    
+    .container {
+        max-width: 1320px;
+    }
+    
+    .card-img-top {
+        height: 280px;
+    }
+    
+    .responsive-title {
+        font-size: 4rem !important;
+    }
+}
+
+/* ============================
+   NAVIGATION RESPONSIVE FIXES
+   ============================ */
+
+@media (max-width: 991px) {
+    /* Improve mobile menu */
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 8px;
+    }
+    
+    .navbar-nav {
+        align-items: stretch;
+    }
+    
+    .nav-item {
+        margin: 0.25rem 0;
+    }
+    
+    .nav-link {
+        padding: 0.75rem 1rem !important;
+        border-radius: 4px;
+    }
+    
+    #colorChangeBtn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* ============================
+   FOOTER RESPONSIVE
+   ============================ */
+
+@media (max-width: 767px) {
+    footer .row {
+        text-align: center;
+    }
+    
+    footer .col-lg-6,
+    footer .col-md-6 {
+        text-align: center !important;
+        margin-bottom: 1.5rem;
+    }
+    
+    footer .btn-group {
+        justify-content: center;
+    }
+}
+
+/* ============================
+   FORM RESPONSIVE
+   ============================ */
+
+@media (max-width: 575px) {
+    .card-body {
+        padding: 2rem 1.5rem;
+    }
+    
+    .form-control-lg,
+    .input-group-lg .form-control,
+    .form-select-lg {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .btn-lg {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+    
+    /* Stack form buttons */
+    .d-md-flex {
+        flex-direction: column !important;
+    }
+    
+    .d-md-flex .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* ============================
+   GALLERY RESPONSIVE
+   ============================ */
+
+@media (max-width: 575px) {
+    .img-box {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .row.g-4 {
+        row-gap: 1.5rem !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .img-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================
+   MENU PAGE RESPONSIVE
+   ============================ */
+
+@media (max-width: 767px) {
+    .menu-container {
+        padding: 0 1rem;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .menu-img {
+        width: 100%;
+        max-width: 250px;
+        height: 180px;
+        margin: 0 auto;
+    }
+    
+    .menu-text {
+        margin-top: 1rem;
+    }
+}
+
+/* ============================
+   PROMO GRID RESPONSIVE
+   ============================ */
+
+@media (max-width: 575px) {
+    .promo-grid {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .promo-item {
+        height: 200px;
+        width: 100%;
+    }
+    
+    .promo-title {
+        font-size: 20px;
+    }
+    
+    .promo-text {
+        font-size: 13px;
+    }
+}
+
+/* ============================
+   CAROUSEL RESPONSIVE CAPTIONS
+   ============================ */
+
+@media (max-width: 767px) {
+    .carousel-caption {
+        padding: 10px;
+        bottom: 10px;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 1.75rem;
+    }
+    
+    .carousel-caption h2 {
+        font-size: 1.25rem;
+    }
+    
+    .carousel-caption p,
+    .carousel-caption .lead {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .carousel-caption {
+        display: none !important; /* Hide on very small screens for better readability */
+    }
+    
+    /* Add alternative title below carousel */
+    .carousel-slide::after {
+        content: '';
+    }
+}
+
+/* ============================
+   SPACING ADJUSTMENTS
+   ============================ */
+
+@media (max-width: 767px) {
+    .my-5 {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .mt-5 {
+        margin-top: 2rem !important;
+    }
+    
+    .mb-5 {
+        margin-bottom: 2rem !important;
+    }
+}
+
+/* ============================
+   TOUCH IMPROVEMENTS FOR MOBILE
+   ============================ */
+
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets for better usability */
+    .btn,
+    .nav-link,
+    .card,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .card:hover {
+        transform: none;
+    }
+    
+    /* Better tap feedback */
+    .btn:active,
+    .nav-link:active {
+        transform: scale(0.95);
+        transition: transform 0.1s;
+    }
+}
+
+/* ============================
+   LANDSCAPE ORIENTATION
+   ============================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .carousel-img {
+        height: 80vh;
+    }
+    
+    .navbar {
+        padding: 0.25rem 0;
+    }
+    
+    .carousel-caption {
+        padding: 5px 10px;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================
+   PRINT STYLES 
+   ============================ */
+
+@media print {
+    .navbar,
+    .carousel-control-prev,
+    .carousel-control-next,
+    .carousel-indicators,
+    #colorChangeBtn,
+    footer .btn,
+    .btn-outline-primary,
+    .btn-outline-secondary {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .card,
+    .carousel-caption {
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+}
+
+/* ============================
+   ACCESSIBILITY: REDUCED MOTION
+   ============================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .carousel {
+        transition: none;
+    }
+}
+
+/* ============================
+   HIGH CONTRAST MODE SUPPORT
+   ============================ */
+
+@media (prefers-contrast: high) {
+    .btn,
+    .card,
+    .form-control {
+        border-width: 2px !important;
+    }
+    
+    a:not(.btn) {
+        text-decoration: underline;
+    }
+}
+
+/* ============================
+   AUTHENTICATION PAGES STYLES
+   Sign Up, Log In, Profile
+   ============================ */
+
+/* ============================
+   AUTH CARD STYLING
+   ============================ */
+
+.auth-card {
+    border-radius: 15px;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease;
+}
+
+.auth-icon {
+    font-size: 4rem;
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Form styling */
+.form-control:focus,
+.form-select:focus {
+    border-color: #b76e79;
+    box-shadow: 0 0 0 0.2rem rgba(183, 110, 121, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    color: #2c1a18;
+}
+
+/* Password toggle button */
+.input-group .btn-outline-secondary:hover {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+/* Loading spinner in button */
+.btn .spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* ============================
+   PROFILE PAGE STYLES
+   ============================ */
+
+/* Profile Avatar */
+.profile-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.avatar-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b76e79 0%, #8d525a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 15px rgba(183, 110, 121, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.avatar-circle:hover {
+    transform: scale(1.05);
+}
+
+/* Quick Stats */
+.row.text-center h4 {
+    font-weight: 700;
+}
+
+/* Feedback History */
+.feedback-item {
+    animation: slideInLeft 0.4s ease;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.feedback-item .card {
+    transition: all 0.3s ease;
+}
+
+.feedback-item .card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-item .border-primary {
+    border-width: 4px !important;
+}
+
+/* Empty state */
+#noFeedback {
+    padding: 3rem 1rem;
+}
+
+#noFeedback .display-1 {
+    font-size: 5rem;
+    opacity: 0.5;
+}
+
+/* Filter & Search */
+#searchFeedback,
+#filterSubject {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+#searchFeedback:focus,
+#filterSubject:focus {
+    border-color: #b76e79;
+    box-shadow: 0 0 0 0.2rem rgba(183, 110, 121, 0.15);
+}
+
+/* Profile card header */
+.card-header.bg-primary {
+    background: linear-gradient(135deg, #b76e79 0%, #8d525a 100%) !important;
+    border: none;
+}
+
+/* Logout button */
+#logoutBtn {
+    transition: all 0.3s ease;
+}
+
+#logoutBtn:hover {
+    transform: scale(1.05);
+}
+
+/* ============================
+   RESPONSIVE - AUTH PAGES
+   ============================ */
+
+@media (max-width: 768px) {
+    .auth-card {
+        margin: 1rem;
+    }
+    
+    .auth-icon {
+        font-size: 3rem;
+    }
+    
+    .avatar-circle {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+    
+    .form-control-lg,
+    .input-group-lg .form-control {
+        font-size: 1rem;
+    }
+}
+
+/* ============================
+   DARK MODE - AUTH & PROFILE
+   ============================ */
+
+body.dark-mode .auth-card {
+    background-color: #161b22 !important;
+}
+
+body.dark-mode .auth-icon {
+    filter: brightness(1.2);
+}
+
+body.dark-mode .form-label {
+    color: #e6edf3 !important;
+}
+
+body.dark-mode .avatar-circle {
+    background: linear-gradient(135deg, #8d525a 0%, #6b3d43 100%);
+}
+
+body.dark-mode .feedback-item .card {
+    background-color: #161b22 !important;
+    border-color: #21262d !important;
+}
+
+body.dark-mode .feedback-item .card:hover {
+    background-color: #1c2128 !important;
+}
+
+body.dark-mode .card-header.bg-primary {
+    background: linear-gradient(135deg, #8d525a 0%, #6b3d43 100%) !important;
+}
+
+body.dark-mode #noFeedback {
+    color: #8b949e !important;
+}
+
+body.dark-mode .modal-content {
+    background-color: #161b22 !important;
+    color: #e6edf3 !important;
+}
+
+body.dark-mode .modal-header {
+    border-bottom-color: #21262d !important;
+}
+
+body.dark-mode .modal-footer {
+    border-top-color: #21262d !important;
+}
+
+body.dark-mode .close {
+    color: #e6edf3 !important;
+}
+
+/* ============================
+   ADDITIONAL ENHANCEMENTS
+   ============================ */
+
+/* Badge animations */
+.badge {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Form validation feedback */
+.invalid-feedback {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* Success message styling */
+.alert-success {
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    border-left: 4px solid #dc3545;
+}
+
+/* Card hover effects */
+.card.shadow-lg:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+/* Button loading state */
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* Pagination styling */
+.pagination .page-link {
+    color: #b76e79;
+}
+
+.pagination .page-link:hover {
+    background-color: #b76e79;
+    color: white;
+    border-color: #b76e79;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #b76e79;
+    border-color: #b76e79;
+}
+
+/* ============================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================ */
+
+.form-control:focus,
+.btn:focus,
+.form-check-input:focus {
+    outline: 2px solid #ffc107;
+    outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-to-main {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+}
+
+.skip-to-main:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+/* ============================
+   FIX: Dark Mode Button Text Visibility
+   ============================ */
+
+body.dark-mode .btn-group .btn {
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #b76e79 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-outline-primary {
+    color: #ffc107 !important;
+    border-color: #ffc107 !important;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+    background-color: #ffc107 !important;
+    color: #000000 !important;
+}
+
+body.dark-mode .btn-outline-secondary {
+    color: #c9d1d9 !important;
+    border-color: #c9d1d9 !important;
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+    background-color: #c9d1d9 !important;
+    color: #000000 !important;
+}
+
+/* Fix for call-to-action buttons */
+body.dark-mode .btn-group a.btn,
+body.dark-mode .btn-group .btn {
+    font-weight: 600 !important;
+}
+
+/* ============================
+   SHOPPING CART STYLES
+   Add this to your style.css file
+   ============================ */
+
+/* Cart count badge in navigation */
+#cartCount {
+    background-color: #dc3545;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Cart page styles */
+.list-group-item {
+    padding: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+body.dark-mode .list-group-item:hover {
+    background-color: #1c2128;
+}
+
+/* Cart item image */
+.list-group-item img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Quantity controls */
+.input-group-sm .btn {
+    min-width: 35px;
+}
+
+.input-group-sm .form-control {
+    max-width: 60px;
+    font-weight: bold;
+}
+
+/* Order summary card */
+.card.sticky-top {
+    transition: box-shadow 0.3s ease;
+}
+
+.card.sticky-top:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Empty cart icon animation */
+#emptyCart .display-1 {
+    animation: float 3s ease-in-out infinite ;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Cart button animations */
+.btn-outline-primary:hover,
+.btn-success:hover,
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive cart layout */
+@media (max-width: 767px) {
+    .list-group-item {
+        padding: 1rem;
+    }
+    
+    .list-group-item .row > div {
+        margin-bottom: 0.5rem;
+    }
+    
+    .list-group-item img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .card.sticky-top {
+        position: relative !important;
+        top: 0 !important;
+    }
+}
+
+/* Dark mode cart styles */
+body.dark-mode .list-group-item {
+    background-color: #161b22;
+    border-color: #21262d;
+    color: #e6edf3;
+}
+
+body.dark-mode .input-group-sm .btn-outline-secondary {
+    color: #8b949e;
+    border-color: #30363d;
+}
+
+body.dark-mode .input-group-sm .btn-outline-secondary:hover {
+    background-color: #21262d;
+    color: #e6edf3;
+}
+
+body.dark-mode .input-group-sm .form-control {
+    background-color: #0d1117;
+    color: #e6edf3;
+    border-color: #30363d;
+}
+
+/* Loading state for order button */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Price badge in cart */
+.badge.bg-primary {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+}
+
+/* Cart item remove button */
+.btn-danger.btn-sm {
+    transition: all 0.3s ease;
+}
+
+.btn-danger.btn-sm:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.4);
+}
+
+/* Order summary text */
+.card-body h5 {
+    font-weight: 600;
+}
+
+.text-success {
+    font-weight: 500;
+}
+

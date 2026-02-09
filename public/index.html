@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee PO</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- jQuery CDN  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- TASK 5: Bootstrap Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container-fluid px-lg-4 px-3">
+        <a class="navbar-brand fw-bold text-warning" href="index.html"
+          >Coffee PO</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item me-3 my-1">
+              <button
+                id="colorChangeBtn"
+                class="btn btn-sm btn-outline-warning ms-lg-3 mt-2 mt-lg-0"
+                aria-label="Toggle dark mode"
+              >
+                <i class="bi bi-moon-stars me-2"></i>Dark Mode
+              </button>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Photos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- TASK 7: Bootstrap Carousel (replacing hero section) -->
+      <section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="5"
+            aria-label="Slide 6"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="6"
+            aria-label="Slide 7"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="7"
+            aria-label="Slide 8"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="8"
+            aria-label="Slide 9"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="img/2.jpg"
+              class="d-block w-100 carousel-img"
+              alt="Coffee atmosphere"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h1 class="display-3 fw-bold">coffee PO</h1>
+              <p class="lead">Your Perfect Coffee Experience</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="img/1.jpeg"
+              class="d-block w-100 carousel-img"
+              alt="Cozy Coffee Shop"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Cozy Atmosphere</h2>
+              <p>Perfect for relaxation</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="img/3.jpg"
+              class="d-block w-100 carousel-img"
+              alt="Coffee Drinks"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Premium Coffee</h2>
+              <p>Best quality beans</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="img/4.jpg"
+              class="d-block w-100 carousel-img"
+              alt="Desserts"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Fresh Pastries</h2>
+              <p>Daily baked treats</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="img/5.jpg"
+              class="d-block w-100 carousel-img"
+              alt="Gathering Place"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Meet Friends</h2>
+              <p>Great conversations</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="img/6.png"
+              class="d-block w-100 carousel-img"
+              alt="Relaxing Space"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Relaxing Vibe</h2>
+              <p>Your second home</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="img/latte.jpg"
+              class="d-block w-100 carousel-img"
+              alt="Latte"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Signature Latte</h2>
+              <p>Smooth and creamy</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="img/cappuccino.jpg"
+              class="d-block w-100 carousel-img"
+              alt="Cappuccino"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Perfect Cappuccino</h2>
+              <p>Rich and balanced</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="img/espresso.jpg"
+              class="d-block w-100 carousel-img"
+              alt="Espresso"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Bold Espresso</h2>
+              <p>Pure coffee essence</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </section>
+
+      <!-- Original promo-grid section (keeping original structure) -->
+      <section class="promo-grid">
+        <div class="promo-item">
+          <img src="img/menu.jpg" alt="Menu" />
+          <a href="menu.html" class="promo-link">
+            <h2 class="promo-title responsive-heading">Menu</h2>
+            <p class="promo-text responsive-text">
+              Discover our delicious selection
+            </p>
+          </a>
+        </div>
+        <div class="promo-item">
+          <img src="img/photo.jpg" alt="Photos" />
+          <a href="gallery.html" class="promo-link">
+            <h2 class="promo-title responsive-heading">Photos</h2>
+            <p class="promo-text responsive-text">
+              A place you will visit often
+            </p>
+          </a>
+        </div>
+        <div class="promo-item">
+          <img src="img/del.jpg" alt="Contact" />
+          <a href="contact.html" class="promo-link">
+            <h2 class="promo-title responsive-heading">Contacts</h2>
+            <p class="promo-text responsive-text">Feel free to call us</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- TASK 2 & TASK 8: Card Section with Bootstrap Cards (replacing original card-container) -->
+      <section class="container-fluid py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5 fw-bold text-dark responsive-title">
+            Why Choose Coffee PO
+          </h2>
+
+          <!-- TASK 2: Responsive card group using CSS media queries -->
+          <div class="row g-4 card-responsive-group">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card h-100 shadow-sm border-0">
+                <img
+                  src="img/1.jpeg"
+                  class="card-img-top"
+                  alt="Cozy Atmosphere"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title fw-bold responsive-subheading">
+                    Cozy Atmosphere
+                  </h3>
+                  <p class="card-text flex-grow-1 responsive-text">
+                    Experience the warmth and comfort of our carefully designed
+                    space, perfect for relaxation and conversation.
+                  </p>
+                  <!-- TASK 6: Bootstrap Buttons -->
+                  <a href="#" class="btn btn-primary mt-3">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card h-100 shadow-sm border-0">
+                <img
+                  src="img/3.jpg"
+                  class="card-img-top"
+                  alt="Premium Coffee"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title fw-bold responsive-subheading">
+                    Premium Coffee
+                  </h3>
+                  <p class="card-text flex-grow-1 responsive-text">
+                    Enjoy our carefully selected beans roasted to perfection,
+                    bringing you the finest coffee experience.
+                  </p>
+                  <a href="menu.html" class="btn btn-outline-primary mt-3"
+                    >View Menu</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+              <div class="card h-100 shadow-sm border-0">
+                <img
+                  src="img/4.jpg"
+                  class="card-img-top"
+                  alt="Fresh Pastries"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title fw-bold responsive-subheading">
+                    Fresh Pastries
+                  </h3>
+                  <p class="card-text flex-grow-1 responsive-text">
+                    Complement your coffee with our daily fresh pastries and
+                    desserts, baked with love and quality ingredients.
+                  </p>
+                  <a href="#" class="btn btn-secondary mt-3">Try Today</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TASK 3: Bootstrap Grid Layout - Two column section with TASK 4: Spacing utilities  -- assik5 js-->
+          <div class="row g-4 mt-5 pt-4">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="accordion-item-custom card shadow-sm border-0">
+                <div class="accordion-header-custom p-4 bg-light rounded-top">
+                  <h3
+                    class="mb-0 text-dark responsive-subheading"
+                    style="cursor: pointer"
+                  >
+                    Our Story
+                    <span class="float-end">▼</span>
+                  </h3>
+                </div>
+                <div class="accordion-content-custom">
+                  <div class="p-4 bg-white rounded-bottom">
+                    <p class="text-muted responsive-text mb-0">
+                      Coffee PO was founded with a passion for bringing people
+                      together over exceptional coffee. We believe every cup
+                      tells a story, and we're here to make yours memorable.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="accordion-item-custom card shadow-sm border-0">
+                <div class="accordion-header-custom p-4 bg-light rounded-top">
+                  <h3
+                    class="mb-0 text-dark responsive-subheading"
+                    style="cursor: pointer"
+                  >
+                    Our Mission
+                    <span class="float-end">▼</span>
+                  </h3>
+                </div>
+                <div class="accordion-content-custom">
+                  <div class="p-4 bg-white rounded-bottom">
+                    <p class="text-muted responsive-text mb-0">
+                      To create a warm, welcoming space where quality coffee
+                      meets genuine hospitality. We're committed to sourcing the
+                      finest beans and crafting perfect beverages every time.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- TASK 10: Footer with Accessibility -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <h3 class="h5 mb-4 text-warning">Contact Information</h3>
+            <div class="mb-3">
+              <p class="mb-1 text-light">Cofee po CEO</p>
+              <a
+                href="tel:+77777777777"
+                class="text-white text-decoration-none fs-5"
+                >+7 777 777-77-77</a
+              >
+            </div>
+            <div class="mb-3">
+              <p class="mb-1 text-light">administration</p>
+              <a
+                href="tel:+77777777777"
+                class="text-white text-decoration-none fs-5"
+                >+7 777 777-77-77</a
+              >
+            </div>
+
+            <div class="mt-4">
+              <a
+                href="#"
+                class="btn btn-outline-light btn-sm me-2"
+                aria-label="Facebook"
+                target="_blank"
+                >Facebook</a
+              >
+              <a
+                href="https://www.instagram.com/"
+                class="btn btn-outline-light btn-sm"
+                aria-label="Instagram"
+                target="_blank"
+                >Instagram</a
+              >
+            </div>
+          </div>
+          <div
+            class="col-lg-6 col-md-6 col-sm-12 text-lg-end text-md-end text-sm-start"
+          >
+            <p class="mb-1">&copy; 2025 PO Coffee</p>
+            <p class="mb-1">Astana IT University</p>
+            <p class="mb-0">SE-2436</p>
+            <div class="my-5" id="dateTimeDisplay"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="api.js"></script>
+    <script src="auth.js"></script>
+    <script src="cart.js"></script>
+    <script src="script.js" defer></script>
+    <!-- jQuery Features Script -->
+    <script src="jquery-features.js"></script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Coffee PO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="adminLogout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+      <div>
+        <h2 class="fw-bold mb-0">Admin Panel</h2>
+        <div class="text-muted">Products and orders management</div>
+      </div>
+      <div class="d-flex gap-2">
+        <a class="btn btn-outline-dark" href="admin-login.html">Switch admin</a>
+      </div>
+    </div>
+
+    <ul class="nav nav-pills mb-3" id="adminTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="products-tab" data-bs-toggle="pill" data-bs-target="#products" type="button" role="tab">Products</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="orders-tab" data-bs-toggle="pill" data-bs-target="#orders" type="button" role="tab">Orders</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="analytics-tab" data-bs-toggle="pill" data-bs-target="#analytics" type="button" role="tab">Analytics</button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="products" role="tabpanel">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+              <h5 class="fw-bold mb-0">Products</h5>
+              <button id="btnAddProduct" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#productModal">Add product</button>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-md-6">
+                <input id="productSearch" class="form-control" placeholder="Search by name/type..." />
+              </div>
+              <div class="col-md-3">
+                <select id="productAvailability" class="form-select">
+                  <option value="">All</option>
+                  <option value="true">Available</option>
+                  <option value="false">Not available</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <button id="btnProductsApply" class="btn btn-outline-dark w-100">Apply</button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Type</th>
+                    <th>Available</th>
+                    <th>Prices</th>
+                    <th style="width: 160px"></th>
+                  </tr>
+                </thead>
+                <tbody id="productsTbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="orders" role="tabpanel">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+              <h5 class="fw-bold mb-0">Orders</h5>
+              <button id="btnOrdersRefresh" class="btn btn-outline-dark btn-sm">Refresh</button>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-md-4">
+                <select id="orderStatusFilter" class="form-select">
+                  <option value="">All statuses</option>
+                  <option value="created">Created</option>
+                  <option value="processing">Processing</option>
+                  <option value="completed">Completed</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <button id="btnOrdersApply" class="btn btn-outline-dark w-100">Apply</button>
+              </div>
+            </div>
+
+            <div id="ordersList" class="d-flex flex-column gap-2"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="analytics" role="tabpanel">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+              <h5 class="fw-bold mb-0">Analytics</h5>
+              <button id="btnAnalyticsRefresh" class="btn btn-outline-dark btn-sm">Refresh</button>
+            </div>
+            <div class="row g-3">
+              <div class="col-lg-6">
+                <div class="border rounded p-3">
+                  <div class="fw-semibold mb-2">Top products</div>
+                  <div id="topProducts"></div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="border rounded p-3">
+                  <div class="fw-semibold mb-2">Sales by status</div>
+                  <div id="salesByStatus"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Product modal -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="productModalTitle">Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="productFormError" class="alert alert-danger d-none"></div>
+          <form id="productForm">
+            <input type="hidden" id="productId" />
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Name</label>
+                <input id="pName" class="form-control" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Type</label>
+                <input id="pType" class="form-control" required />
+              </div>
+              <div class="col-12">
+                <label class="form-label">Description</label>
+                <textarea id="pDescription" class="form-control" rows="3"></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Image URL</label>
+                <input id="pImageUrl" class="form-control" />
+              </div>
+              <div class="col-12">
+                <label class="form-label">Ingredients (comma separated)</label>
+                <input id="pIngredients" class="form-control" />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Available</label>
+                <select id="pAvailable" class="form-select">
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </div>
+              <div class="col-md-8">
+                <label class="form-label">Prices</label>
+                <div class="row g-2">
+                  <div class="col"><input id="priceS" type="number" min="0" class="form-control" placeholder="S price" /></div>
+                  <div class="col"><input id="priceM" type="number" min="0" class="form-control" placeholder="M price" /></div>
+                  <div class="col"><input id="priceL" type="number" min="0" class="form-control" placeholder="L price" /></div>
+                </div>
+                <div class="text-muted small mt-1">At least one size price is required</div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button id="btnProductSave" class="btn btn-dark">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="api.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
